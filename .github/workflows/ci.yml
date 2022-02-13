@@ -35,7 +35,8 @@ jobs:
       - name: deploy DG on any commit to master, to markbind.org/devdocs
         run: >-
           echo "This step will only execute when there is a push" &&
-          echo ${{github.ref_type}}
+          echo ${{github.ref_type}} &&
+          echo ${{github.repository}}
       - name: deploy UG on release, to markbind.org
         if: github.ref_type == 'tag'
         run: >-
